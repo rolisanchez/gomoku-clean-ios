@@ -12,19 +12,12 @@
 		FB48490821627E7F00D94355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB48490621627E7F00D94355 /* Main.storyboard */; };
 		FB48490A21627E8000D94355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB48490921627E8000D94355 /* Assets.xcassets */; };
 		FB48490D21627E8000D94355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB48490B21627E8000D94355 /* LaunchScreen.storyboard */; };
-		FB48491821627E8000D94355 /* GomokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48491721627E8000D94355 /* GomokuTests.swift */; };
-		FB48492321627E8000D94355 /* GomokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48492221627E8000D94355 /* GomokuUITests.swift */; };
+		FB48493121627F8500D94355 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493021627F8500D94355 /* BoardTests.swift */; };
+		FB48493321627FF900D94355 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		FB48491421627E8000D94355 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FB4848F721627E7F00D94355 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FB4848FE21627E7F00D94355;
-			remoteInfo = Gomoku;
-		};
-		FB48491F21627E8000D94355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FB4848F721627E7F00D94355 /* Project object */;
 			proxyType = 1;
@@ -42,11 +35,10 @@
 		FB48490C21627E8000D94355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB48490E21627E8000D94355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB48491321627E8000D94355 /* GomokuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GomokuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB48491721627E8000D94355 /* GomokuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuTests.swift; sourceTree = "<group>"; };
 		FB48491921627E8000D94355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB48491E21627E8000D94355 /* GomokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GomokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB48492221627E8000D94355 /* GomokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuUITests.swift; sourceTree = "<group>"; };
 		FB48492421627E8000D94355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB48493021627F8500D94355 /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
+		FB48493221627FF900D94355 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +50,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FB48491021627E8000D94355 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB48491B21627E8000D94355 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,7 +74,6 @@
 			children = (
 				FB4848FF21627E7F00D94355 /* Gomoku.app */,
 				FB48491321627E8000D94355 /* GomokuTests.xctest */,
-				FB48491E21627E8000D94355 /* GomokuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +87,7 @@
 				FB48490921627E8000D94355 /* Assets.xcassets */,
 				FB48490B21627E8000D94355 /* LaunchScreen.storyboard */,
 				FB48490E21627E8000D94355 /* Info.plist */,
+				FB48493221627FF900D94355 /* Board.swift */,
 			);
 			path = Gomoku;
 			sourceTree = "<group>";
@@ -110,8 +95,8 @@
 		FB48491621627E8000D94355 /* GomokuTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB48491721627E8000D94355 /* GomokuTests.swift */,
 				FB48491921627E8000D94355 /* Info.plist */,
+				FB48493021627F8500D94355 /* BoardTests.swift */,
 			);
 			path = GomokuTests;
 			sourceTree = "<group>";
@@ -119,7 +104,6 @@
 		FB48492121627E8000D94355 /* GomokuUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FB48492221627E8000D94355 /* GomokuUITests.swift */,
 				FB48492421627E8000D94355 /* Info.plist */,
 			);
 			path = GomokuUITests;
@@ -163,24 +147,6 @@
 			productReference = FB48491321627E8000D94355 /* GomokuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FB48491D21627E8000D94355 /* GomokuUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FB48492D21627E8000D94355 /* Build configuration list for PBXNativeTarget "GomokuUITests" */;
-			buildPhases = (
-				FB48491A21627E8000D94355 /* Sources */,
-				FB48491B21627E8000D94355 /* Frameworks */,
-				FB48491C21627E8000D94355 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FB48492021627E8000D94355 /* PBXTargetDependency */,
-			);
-			name = GomokuUITests;
-			productName = GomokuUITests;
-			productReference = FB48491E21627E8000D94355 /* GomokuUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,10 +162,7 @@
 					};
 					FB48491221627E8000D94355 = {
 						CreatedOnToolsVersion = 10.0;
-						TestTargetID = FB4848FE21627E7F00D94355;
-					};
-					FB48491D21627E8000D94355 = {
-						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = FB4848FE21627E7F00D94355;
 					};
 				};
@@ -219,7 +182,6 @@
 			targets = (
 				FB4848FE21627E7F00D94355 /* Gomoku */,
 				FB48491221627E8000D94355 /* GomokuTests */,
-				FB48491D21627E8000D94355 /* GomokuUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,13 +204,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB48491C21627E8000D94355 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -258,6 +213,7 @@
 			files = (
 				FB48490521627E7F00D94355 /* ViewController.swift in Sources */,
 				FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */,
+				FB48493321627FF900D94355 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,15 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB48491821627E8000D94355 /* GomokuTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB48491A21627E8000D94355 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB48492321627E8000D94355 /* GomokuUITests.swift in Sources */,
+				FB48493121627F8500D94355 /* BoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +232,6 @@
 			isa = PBXTargetDependency;
 			target = FB4848FE21627E7F00D94355 /* Gomoku */;
 			targetProxy = FB48491421627E8000D94355 /* PBXContainerItemProxy */;
-		};
-		FB48492021627E8000D94355 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FB4848FE21627E7F00D94355 /* Gomoku */;
-			targetProxy = FB48491F21627E8000D94355 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -469,6 +412,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGDA583PP;
 				INFOPLIST_FILE = GomokuTests/Info.plist;
@@ -479,6 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.GomokuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gomoku.app/Gomoku";
@@ -490,6 +435,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGDA583PP;
 				INFOPLIST_FILE = GomokuTests/Info.plist;
@@ -503,46 +449,6 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gomoku.app/Gomoku";
-			};
-			name = Release;
-		};
-		FB48492E21627E8000D94355 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3GGDA583PP;
-				INFOPLIST_FILE = GomokuUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.GomokuUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Gomoku;
-			};
-			name = Debug;
-		};
-		FB48492F21627E8000D94355 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3GGDA583PP;
-				INFOPLIST_FILE = GomokuUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.GomokuUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Gomoku;
 			};
 			name = Release;
 		};
@@ -572,15 +478,6 @@
 			buildConfigurations = (
 				FB48492B21627E8000D94355 /* Debug */,
 				FB48492C21627E8000D94355 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FB48492D21627E8000D94355 /* Build configuration list for PBXNativeTarget "GomokuUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FB48492E21627E8000D94355 /* Debug */,
-				FB48492F21627E8000D94355 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
