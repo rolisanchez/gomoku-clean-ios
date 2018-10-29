@@ -7,7 +7,16 @@
 //
 
 class GomokuRules {
-    func isWin(board: Board) -> Bool {
-        return false
+    func isWin(board: Board) throws -> Bool {
+        let row = 0
+        var playerPiecesInARow = 0
+        
+        for col in 0..<board.WIDTH {
+            let playersPiece = try board.get(intersection: Intersection(row,col))
+            if playersPiece == .White {
+                playerPiecesInARow += 1
+            }
+        }
+        return playerPiecesInARow > 4
     }
 }
