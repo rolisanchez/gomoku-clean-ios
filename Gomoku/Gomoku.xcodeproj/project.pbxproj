@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
+		FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
 		FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48490221627E7F00D94355 /* AppDelegate.swift */; };
 		FB48490521627E7F00D94355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48490421627E7F00D94355 /* ViewController.swift */; };
 		FB48490821627E7F00D94355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB48490621627E7F00D94355 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB173B0E2187013C0003DDB9 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		FB173B102187049A0003DDB9 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		FB4848FF21627E7F00D94355 /* Gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB48490221627E7F00D94355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB48490421627E7F00D94355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				FB48490921627E8000D94355 /* Assets.xcassets */,
 				FB48490B21627E8000D94355 /* LaunchScreen.storyboard */,
 				FB48490621627E7F00D94355 /* Main.storyboard */,
+				FB173B0E2187013C0003DDB9 /* GridView.swift */,
+				FB173B102187049A0003DDB9 /* UIColor+Additions.swift */,
 			);
 			path = Gomoku;
 			sourceTree = "<group>";
@@ -220,7 +226,9 @@
 				FB48490521627E7F00D94355 /* ViewController.swift in Sources */,
 				FB5A380E21837CCB0036CBBE /* GomokuRules.swift in Sources */,
 				FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */,
+				FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */,
 				FB48493321627FF900D94355 /* Board.swift in Sources */,
+				FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
