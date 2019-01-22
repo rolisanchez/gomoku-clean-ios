@@ -16,10 +16,10 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(hexString: "E2E2E2")
         
         let board = Board()
-        _ = board.place(intersection: Intersection(10,10), player: .White)
-        _ = board.place(intersection: Intersection(11,11), player: .Black)
-        _ = board.place(intersection: Intersection(8,8), player: .White)
-        _ = board.place(intersection: Intersection(9,9), player: .Black)
+        _ = board.place(10,10, .White)
+        _ = board.place(11,11, .Black)
+        _ = board.place(8,8, .White)
+        _ = board.place(9,9, .Black)
         let gridView = GridView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: self.view.frame.width), board: board)
         
         self.view.addSubview(gridView)

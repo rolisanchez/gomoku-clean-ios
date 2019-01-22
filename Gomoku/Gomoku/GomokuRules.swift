@@ -8,16 +8,18 @@
 
 class GomokuRules {
     func isWin(board: Board) -> Bool {
-        let row = 0
         var playerPiecesInARow = 0
         
-        for col in 0..<board.WIDTH {
-            // Underscore here because it should NEVER fail
-            let (playersPiece, _) = board.get(intersection: Intersection(row,col))
-            if playersPiece == .White {
-                playerPiecesInARow += 1
+        for row in 0..<board.HEIGHT {
+            for col in 0..<board.WIDTH {
+                // Underscore here because it should NEVER fail
+                let (playersPiece, _) = board.get(row,col)
+                if playersPiece == .White {
+                    playerPiecesInARow += 1
+                }
             }
         }
+        
         return playerPiecesInARow > 4
     }
 }

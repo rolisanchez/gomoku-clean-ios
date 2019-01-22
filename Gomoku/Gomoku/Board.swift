@@ -18,7 +18,9 @@ enum BoardError {
     case BadLocation
 }
 
-typealias Intersection = (row: Int, column: Int)
+// Might be interesting in other situations, but delete for now
+// Delete for now since it was a fix to reduce too much text
+//typealias Intersection = (row: Int, column: Int)
 
 class Board {
     let WIDTH = 19
@@ -30,12 +32,8 @@ class Board {
         return placedStones.count
     }
     
-    func place(row: Int, column: Int, player: Player) -> BoardError? {
-        return place(intersection: Intersection(row, column), player: player)
-    }
-    
-    func place(intersection: Intersection, player: Player) -> BoardError? {
-        let (loc, error) = makeLocation(intersection: intersection)
+    func place(_ row: Int, _ column: Int, _ player: Player) -> BoardError? {
+        let (loc, error) = makeLocation(row, column)
         
         if (error != nil) {
             return error
@@ -50,11 +48,7 @@ class Board {
         return nil
     }
     
-    func makeLocation(intersection: Intersection) -> (Int, BoardError?) {
-        return makeLocation(row: intersection.row, column: intersection.column)
-    }
-    
-    func makeLocation(row: Int, column: Int) -> (Int, BoardError?)  {
+    func makeLocation(_ row: Int, _ column: Int) -> (Int, BoardError?)  {
         var error : BoardError?
         
         if row < 0 || row >= WIDTH || column < 0 || column >= HEIGHT {
@@ -63,12 +57,8 @@ class Board {
         return (column * WIDTH + row, error)
     }
     
-    func get(row: Int, column: Int) -> (Player?, BoardError?) {
-        return get(intersection: Intersection(row, column))
-    }
-    
-    func get(intersection: Intersection) -> (Player?, BoardError?) {
-        let (loc, error) =  makeLocation(intersection: intersection)
+    func get(_ row: Int, _ column: Int) -> (Player?, BoardError?) {
+        let (loc, error) =  makeLocation(row, column)
         
         if (error != nil) {
             return (nil, error)
