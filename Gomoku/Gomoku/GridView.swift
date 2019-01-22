@@ -10,10 +10,19 @@ import UIKit
 
 class GridView: UIView {
     let board : Board
+    let boardSize : CGFloat
+    let cellCount : Int
+    let cellSize : CGFloat
+    var tapper : UITapGestureRecognizer!
     
     init(frame: CGRect, board: Board) {
         self.board = board
+        self.boardSize = min(frame.size.width, frame.size.height)
+        self.cellCount = board.WIDTH + 1
+        self.cellSize = boardSize / CGFloat(cellCount)
         super.init(frame: frame)
+        self.tapper = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        self.addGestureRecognizer(self.tapper)
         self.backgroundColor = UIColor(hexString: "C58124")
     }
     
@@ -21,22 +30,28 @@ class GridView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func tapped (_ tapper: UITapGestureRecognizer) {
+        let locationOfTap = tapper.location(ofTouch: 0, in: self)
+        
+        let tappedRow = Int((locationOfTap.y - cellSize) / cellSize + 0.5)
+        let tappedColumn = Int((locationOfTap.x - cellSize) / cellSize + 0.5)
+        _ = board.place(intersection: Intersection(tappedRow, tappedColumn), player: .White)
+        self.setNeedsDisplay()
+    }
+    
     override func draw(_ rect: CGRect) {
-        let outerBoxSize = min(rect.size.width, rect.size.height)
-        let cellCount = board.WIDTH + 1
-        let cellSize = outerBoxSize / CGFloat(cellCount)
         
         let path = UIBezierPath()
         
         for i in 1..<cellCount {
             let xPos = CGFloat(i) * cellSize
             path.move(to: CGPoint(x: xPos, y: cellSize  ))
-            path.addLine(to: CGPoint(x: xPos, y: outerBoxSize - cellSize))
+            path.addLine(to: CGPoint(x: xPos, y: boardSize - cellSize))
         }
         for i in 1..<cellCount {
             let yPos = CGFloat(i) * cellSize
             path.move(to: CGPoint(x: cellSize, y: yPos ))
-            path.addLine(to: CGPoint(x: outerBoxSize - cellSize, y: yPos))
+            path.addLine(to: CGPoint(x: boardSize - cellSize, y: yPos))
         }
         
         path.lineWidth = 1.0
@@ -44,7 +59,7 @@ class GridView: UIView {
         
         for col in 0..<board.WIDTH {
             for row in 0..<board.HEIGHT {
-                let stone = try! board.get(intersection: Intersection(row, col))
+                let (stone, _) = board.get(intersection: Intersection(row, col))
                 if stone != Player.Empty {
                     let stonePath = UIBezierPath()
                     stone == Player.White ? UIColor.white.set() : UIColor.black.set()
