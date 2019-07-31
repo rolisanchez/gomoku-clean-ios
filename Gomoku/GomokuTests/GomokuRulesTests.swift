@@ -19,40 +19,38 @@ class GomokuRulesTests: XCTestCase {
         rules = GomokuRules()
     }
     
-    func testEmptyBoard_isNotAWin() throws {
-        try XCTAssertFalse(rules.isWin(board: board))
+    func testEmptyBoard_isNotAWin() {
+        XCTAssertFalse(rules.isWin(board: board))
     }
     
-    func testNotEmptyBoardButNotWin_isNotAWin() throws {
-        try board.place(intersection: Intersection(1,1), player: .White)
-        try XCTAssertFalse(rules.isWin(board: board))
+    func testNotEmptyBoardButNotWin_isNotAWin() {
+        _ = board.place(1,1, .White)
+        XCTAssertFalse(rules.isWin(board: board))
     }
     
-    func testFiveInARowInTheFirstRow_isAWin() throws {
+    func testFiveInARowInTheFirstRow_isAWin() {
         for col in 0..<5 {
-            try board.place(intersection: Intersection(0,col), player: .White)
+            _ = board.place(0, col, .White)
         }
-        try XCTAssertTrue(rules.isWin(board: board))
+        XCTAssertTrue(rules.isWin(board: board))
 
     }
     
-    func testFourInARowInTheFirstRow_isALose() throws {
+    func testFourInARowInTheFirstRow_isALose() {
         for col in 0..<4 {
-        try board.place(intersection: Intersection(0,col), player: .White)
+        _ = board.place(0,col, .White)
         }
-        try XCTAssertFalse(rules.isWin(board: board))
+        XCTAssertFalse(rules.isWin(board: board))
     }
     
-    func testFiveInARowInAnyRow_isAWin() throws {
+    func testFiveInARowInAnyRow_isAWin() {
         for row in 0..<board.HEIGHT {
             for col in 0..<5 {
-                try board.place(intersection: Intersection(row,col), player: .White)
+                _ = board.place(row,col, .White)
             }
-            try XCTAssertTrue(rules.isWin(board: board))
+            XCTAssertTrue(rules.isWin(board: board))
             board = Board()
         }
-        
-        
         
     }
 

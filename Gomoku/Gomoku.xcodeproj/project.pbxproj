@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
 		FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
+		FB1EEE1521F4BF9D0011D7AF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* Board.swift */; };
+		FB1EEE1621F4BF9D0011D7AF /* GomokuRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A380D21837CCB0036CBBE /* GomokuRules.swift */; };
+		FB1EEE1721F4BF9D0011D7AF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
+		FB1EEE1821F4BFAD0011D7AF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
 		FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48490221627E7F00D94355 /* AppDelegate.swift */; };
 		FB48490521627E7F00D94355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48490421627E7F00D94355 /* ViewController.swift */; };
 		FB48490821627E7F00D94355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB48490621627E7F00D94355 /* Main.storyboard */; };
@@ -175,7 +179,6 @@
 					FB48491221627E8000D94355 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
-						TestTargetID = FB4848FE21627E7F00D94355;
 					};
 				};
 			};
@@ -236,6 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1EEE1821F4BFAD0011D7AF /* UIColor+Additions.swift in Sources */,
+				FB1EEE1521F4BF9D0011D7AF /* Board.swift in Sources */,
+				FB1EEE1621F4BF9D0011D7AF /* GomokuRules.swift in Sources */,
+				FB1EEE1721F4BF9D0011D7AF /* GridView.swift in Sources */,
 				FB48493121627F8500D94355 /* BoardTests.swift in Sources */,
 				FB5A380C21837AC20036CBBE /* GomokuRulesTests.swift in Sources */,
 			);
@@ -427,7 +434,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGDA583PP;
@@ -442,7 +448,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gomoku.app/Gomoku";
 			};
 			name = Debug;
 		};
@@ -450,7 +455,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGDA583PP;
@@ -464,7 +468,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gomoku.app/Gomoku";
 			};
 			name = Release;
 		};
