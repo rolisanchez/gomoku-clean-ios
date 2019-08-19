@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB38CECB230AEE2D00AC50AE /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38CECA230AEE2D00AC50AE /* GameTest.swift */; };
+		DB38CECD230AF60E00AC50AE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38CECC230AF60E00AC50AE /* Game.swift */; };
+		DB45B10F230AF89E0099D65E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38CECC230AF60E00AC50AE /* Game.swift */; };
 		FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
 		FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
 		FB1EEE1521F4BF9D0011D7AF /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* Board.swift */; };
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB38CECA230AEE2D00AC50AE /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		DB38CECC230AF60E00AC50AE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FB173B0E2187013C0003DDB9 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		FB173B102187049A0003DDB9 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		FB4848FF21627E7F00D94355 /* Gomoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gomoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,16 +98,17 @@
 		FB48490121627E7F00D94355 /* Gomoku */ = {
 			isa = PBXGroup;
 			children = (
-				FB48490E21627E8000D94355 /* Info.plist */,
 				FB48490221627E7F00D94355 /* AppDelegate.swift */,
-				FB48493221627FF900D94355 /* Board.swift */,
-				FB5A380D21837CCB0036CBBE /* GomokuRules.swift */,
-				FB48490421627E7F00D94355 /* ViewController.swift */,
 				FB48490921627E8000D94355 /* Assets.xcassets */,
+				FB48493221627FF900D94355 /* Board.swift */,
+				DB38CECC230AF60E00AC50AE /* Game.swift */,
+				FB5A380D21837CCB0036CBBE /* GomokuRules.swift */,
+				FB173B0E2187013C0003DDB9 /* GridView.swift */,
+				FB48490E21627E8000D94355 /* Info.plist */,
 				FB48490B21627E8000D94355 /* LaunchScreen.storyboard */,
 				FB48490621627E7F00D94355 /* Main.storyboard */,
-				FB173B0E2187013C0003DDB9 /* GridView.swift */,
 				FB173B102187049A0003DDB9 /* UIColor+Additions.swift */,
+				FB48490421627E7F00D94355 /* ViewController.swift */,
 			);
 			path = Gomoku;
 			sourceTree = "<group>";
@@ -110,9 +116,10 @@
 		FB48491621627E8000D94355 /* GomokuTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB48491921627E8000D94355 /* Info.plist */,
 				FB48493021627F8500D94355 /* BoardTests.swift */,
+				DB38CECA230AEE2D00AC50AE /* GameTest.swift */,
 				FB5A380B21837AC20036CBBE /* GomokuRulesTests.swift */,
+				FB48491921627E8000D94355 /* Info.plist */,
 			);
 			path = GomokuTests;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			files = (
 				FB48490521627E7F00D94355 /* ViewController.swift in Sources */,
 				FB5A380E21837CCB0036CBBE /* GomokuRules.swift in Sources */,
+				DB38CECD230AF60E00AC50AE /* Game.swift in Sources */,
 				FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */,
 				FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */,
 				FB48493321627FF900D94355 /* Board.swift in Sources */,
@@ -239,12 +247,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB38CECB230AEE2D00AC50AE /* GameTest.swift in Sources */,
 				FB1EEE1821F4BFAD0011D7AF /* UIColor+Additions.swift in Sources */,
 				FB1EEE1521F4BF9D0011D7AF /* Board.swift in Sources */,
 				FB1EEE1621F4BF9D0011D7AF /* GomokuRules.swift in Sources */,
 				FB1EEE1721F4BF9D0011D7AF /* GridView.swift in Sources */,
 				FB48493121627F8500D94355 /* BoardTests.swift in Sources */,
 				FB5A380C21837AC20036CBBE /* GomokuRulesTests.swift in Sources */,
+				DB45B10F230AF89E0099D65E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +346,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -390,6 +401,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -407,7 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.Gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -425,7 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.Gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -446,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.GomokuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -466,7 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vrsj.GomokuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
