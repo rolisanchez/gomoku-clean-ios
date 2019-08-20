@@ -51,7 +51,7 @@ class Board {
     func makeLocation(_ row: Int, _ column: Int) -> (Int, BoardError?)  {
         var error : BoardError?
         
-        if row < 0 || row >= WIDTH || column < 0 || column >= HEIGHT {
+        if row < 0 || row >= HEIGHT || column < 0 || column >= WIDTH {
             error = .BadLocation
         }
         return (column * WIDTH + row, error)

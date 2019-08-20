@@ -21,7 +21,15 @@ class Game {
     }
     
     func takeTurn(_ row: Int, _ column: Int){
-        self.board.place(row, column, whoseTurn())
-        player = player == Player.White ? Player.Black : Player.White
+        board.place(row, column, whoseTurn())
+        player = other(player)
+    }
+    
+    func other(_ player: Player) -> Player {
+        return player == Player.White ? Player.Black : Player.White
+    }
+    
+    func getBoard() -> Board {
+        return board
     }
 }

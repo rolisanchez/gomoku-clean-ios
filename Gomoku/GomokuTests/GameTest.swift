@@ -29,10 +29,14 @@ class GameTest: XCTestCase {
         XCTAssertEqual(Player.White, game.whoseTurn())
     }
     
-    func testAfterWhitseTurn_isBlacksTurn() {
+    func testAfterATurn_isOtherPlayersTurn() {
         game.takeTurn(0,0)
         XCTAssertEqual(Player.White, board.get(0, 0).0)
         XCTAssertEqual(Player.Black, game.whoseTurn())
+        
+        game.takeTurn(1,0)
+        XCTAssertEqual(Player.Black, board.get(1, 0).0)
+        XCTAssertEqual(Player.White, game.whoseTurn())
     }
 
 }
