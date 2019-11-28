@@ -11,9 +11,6 @@ import XCTest
 
 class GamePresenterTest: XCTestCase {
     func testFormatOfPlayerStatus(){
-//        let board = Board()
-//        let rules = GomokuRules()
-//        let game = Game(board: board, rules: rules)
         let presenter = GamePresenter()
         XCTAssertEqual("White's Turn", presenter.getPlayerStatus(player: .White))
         XCTAssertEqual("Black's Turn", presenter.getPlayerStatus(player: .Black))

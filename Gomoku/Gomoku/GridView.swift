@@ -44,7 +44,6 @@ class GridView: UIView {
         let tappedRow = Int((locationOfTap.y - cellSize) / cellSize + 0.5)
         let tappedColumn = Int((locationOfTap.x - cellSize) / cellSize + 0.5)
         self.tapResponder?(tappedRow, tappedColumn)
-        game.takeTurn(tappedRow, tappedColumn)
         self.setNeedsDisplay()
     }
     

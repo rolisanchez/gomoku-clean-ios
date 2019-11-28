@@ -25,7 +25,11 @@ class ViewController: UIViewController {
         presenter = GamePresenter()
         let gridView = GridView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: self.view.frame.width), game: game)
         self.view.addSubview(gridView)
-//        gridView.tapResponder = () ->
+        gridView.setResponder(responder: { (col, row) in
+            self.respondToTap(col: col, row: row)
+            
+        })
+
         let labelWidth: CGFloat = 100.0
         statusLabel = UILabel(frame: CGRect(x: (view.frame.width - labelWidth) / 2.0 , y: 100, width: 100, height: 100))
         self.view.addSubview(statusLabel)
@@ -34,6 +38,10 @@ class ViewController: UIViewController {
         statusLabel.text = presenter.getPlayerStatus(player: game.whoseTurn())
     }
 
+    func respondToTap(col: Int, row: Int){
+        game.takeTurn(col,row)
+        statusLabel.text = self.presenter.getPlayerStatus(player: self.game.whoseTurn())
+    }
 
 }
 
