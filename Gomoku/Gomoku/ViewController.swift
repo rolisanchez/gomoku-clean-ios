@@ -39,8 +39,15 @@ class ViewController: UIViewController {
     }
 
     func respondToTap(col: Int, row: Int){
-        game.takeTurn(col,row)
-        statusLabel.text = self.presenter.getPlayerStatus(player: self.game.whoseTurn())
+        let currentTurnPlayer = game.whoseTurn()
+        game.takeTurn(col,row) // Changes to next player
+        if game.getRules().isWin(board: board, player: currentTurnPlayer){
+            statusLabel.text = self.presenter.getWinStatus(player: currentTurnPlayer)
+        } else {
+            statusLabel.text = self.presenter.getPlayerStatus(player: self.game.whoseTurn())
+        }
+        
+        
     }
 
 }

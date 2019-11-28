@@ -11,9 +11,10 @@ import Foundation
 class Game {
     let board: Board
     var player = Player.White
-    
+    var rules: GomokuRules
     init(board: Board, rules: GomokuRules) {
         self.board = board
+        self.rules = rules
     }
     
     func whoseTurn() -> Player {
@@ -21,7 +22,7 @@ class Game {
     }
     
     func takeTurn(_ row: Int, _ column: Int){
-        board.place(row, column, whoseTurn())
+        _ = board.place(row, column, whoseTurn())
         player = other(player)
     }
     
@@ -31,5 +32,9 @@ class Game {
     
     func getBoard() -> Board {
         return board
+    }
+    
+    func getRules() -> GomokuRules {
+        return rules
     }
 }
