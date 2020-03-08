@@ -7,7 +7,7 @@
 //
 
 class GomokuRules {
-    func isWin(board: Board, player: Player) -> Bool {
+    func isWin(board: BoardState, player: Player) -> Bool {
         if isRowWin(board: board, player: player) || isColWin(board: board, player: player){
             return true
         } else {
@@ -15,19 +15,19 @@ class GomokuRules {
         }
     }
     
-    func isRowWin(board: Board, player: Player) -> Bool {
-        return isConsecutive(board: board, player: player, iMax: board.HEIGHT, jMax: board.WIDTH, getStone: { (i, j) -> Player in
+    func isRowWin(board: BoardState, player: Player) -> Bool {
+        return isConsecutive(board: board, player: player, iMax: board.getHeight(), jMax: board.getWidth(), getStone: { (i, j) -> Player in
             return board.get(i,j).0!
         })
     }
     
-    func isColWin(board: Board, player: Player) -> Bool {
-        return isConsecutive(board: board, player: player, iMax: board.WIDTH, jMax: board.HEIGHT, getStone: { (i, j) -> Player in
+    func isColWin(board: BoardState, player: Player) -> Bool {
+        return isConsecutive(board: board, player: player, iMax: board.getWidth(), jMax: board.getHeight(), getStone: { (i, j) -> Player in
             return board.get(j,i).0!
         })
     }
     
-    func isConsecutive(board: Board, player: Player,  iMax: Int, jMax: Int, getStone: (_ i: Int, _ j: Int) -> Player) -> Bool{
+    func isConsecutive(board: BoardState, player: Player,  iMax: Int, jMax: Int, getStone: (_ i: Int, _ j: Int) -> Player) -> Bool{
         var consecutiveStones = 0
         for i in 0..<iMax {
             for j in 0..<jMax {

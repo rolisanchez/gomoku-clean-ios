@@ -11,19 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     var statusLabel: UILabel!
-    var board: Board!
-    var rules: GomokuRules!
     var game: Game!
     var presenter: GamePresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(hexString: "E2E2E2")
-        board = Board()
-        rules = GomokuRules()
-        game = Game(board: board, rules: rules)
+        game = Game()
+        
         presenter = GamePresenter()
-        let gridView = GridView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: self.view.frame.width), game: game)
+        let gridView = GridView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: self.view.frame.width), board: game.getBoard())
         self.view.addSubview(gridView)
         gridView.setResponder(responder: { (col, row) in
             self.respondToTap(col: col, row: row)
@@ -41,7 +38,7 @@ class ViewController: UIViewController {
     func respondToTap(col: Int, row: Int){
         let currentTurnPlayer = game.whoseTurn()
         game.takeTurn(col,row) // Changes to next player
-        if game.getRules().isWin(board: board, player: currentTurnPlayer){
+        if game.getRules().isWin(board: game.getBoard(), player: currentTurnPlayer){
             statusLabel.text = self.presenter.getWinStatus(player: currentTurnPlayer)
         } else {
             statusLabel.text = self.presenter.getPlayerStatus(player: self.game.whoseTurn())

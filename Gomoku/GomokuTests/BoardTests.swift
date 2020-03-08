@@ -11,27 +11,29 @@ import XCTest
 
 class BoardTests: XCTestCase {
     var board: Board!
+    var boardData: BoardData!
     
     override func setUp() {
         super.setUp()
-        board = Board()
+        boardData = BoardData()
+        board = boardData
     }
     
     func testNewBoardHasNoStones() {
         
-        let stones = board.stonesPlaced()
+        let stones = boardData.stonesPlaced()
         XCTAssertEqual(0, stones)
     }
     
     func testCanAddOneWhiteStone() {
         _ = board.place(1, 1, .White)
-        XCTAssertEqual(1, board.stonesPlaced())
+        XCTAssertEqual(1, boardData.stonesPlaced())
         XCTAssertEqual(.White, board.get(1, 1).0)
         
-        _ = board.place(board.WIDTH-1, board.HEIGHT-1, .Black)
+        _ = board.place(boardData.getWidth()-1, boardData.getHeight()-1, .Black)
         
-        XCTAssertEqual(2, board.stonesPlaced())
-        XCTAssertEqual(.Black, board.get(board.WIDTH-1, board.HEIGHT-1).0)
+        XCTAssertEqual(2, boardData.stonesPlaced())
+        XCTAssertEqual(.Black, board.get(boardData.getWidth()-1, boardData.getHeight()-1).0)
     }
     
     func testKnowsAboutEmptyIntersections() {
@@ -50,13 +52,13 @@ class BoardTests: XCTestCase {
     func testCannotPlaceStonesOutsideBounds() {
 
     XCTAssertEqual(board.place(-1,-1, .White), .BadLocation)
-        XCTAssertEqual(board.place(board.WIDTH, board.HEIGHT, .White), .BadLocation)
+        XCTAssertEqual(board.place(boardData.getWidth(), boardData.getHeight(), .White), .BadLocation)
         XCTAssertEqual(board.place(0,-1, .White), .BadLocation)
-        XCTAssertEqual(board.place(0,board.HEIGHT, .White), .BadLocation)
+        XCTAssertEqual(board.place(0,boardData.getHeight(), .White), .BadLocation)
         XCTAssertEqual(board.place(-1,0, .White), .BadLocation)
-        XCTAssertEqual(board.place(board.WIDTH,0, .White), .BadLocation)
+        XCTAssertEqual(board.place(boardData.getWidth(),0, .White), .BadLocation)
 
-        XCTAssertEqual(0, board.stonesPlaced())
+        XCTAssertEqual(0, boardData.stonesPlaced())
     }
 
 }

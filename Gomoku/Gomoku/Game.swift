@@ -8,13 +8,19 @@
 
 import Foundation
 
+protocol BoardFactory {
+    func makeBoard() -> Board
+}
+
 class Game {
-    let board: Board
-    var player = Player.White
-    var rules: GomokuRules
-    init(board: Board, rules: GomokuRules) {
-        self.board = board
-        self.rules = rules
+    private let board: Board
+    private var player = Player.White
+    private var rules: GomokuRules
+    static var boardFactory: BoardFactory!
+    
+    init(){
+        self.board = Game.boardFactory!.makeBoard()
+        self.rules = GomokuRules()
     }
     
     func whoseTurn() -> Player {
@@ -30,8 +36,8 @@ class Game {
         return player == Player.White ? Player.Black : Player.White
     }
     
-    func getBoard() -> Board {
-        return board
+    func getBoard() -> BoardState {
+        return board as! BoardState
     }
     
     func getRules() -> GomokuRules {

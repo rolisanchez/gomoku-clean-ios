@@ -11,28 +11,31 @@ import XCTest
 
 class GomokuRulesTests: XCTestCase {
     var board : Board!
+    var boardState: BoardState!
     var rules : GomokuRules!
     
     override func setUp() {
         super.setUp()
-        board = Board()
+        Game.boardFactory = BoardFactoryImpl()
+        board = Game.boardFactory!.makeBoard()
+        boardState = (board as! BoardState)
         rules = GomokuRules()
     }
     
     func testEmptyBoard_isNotAWin() {
-        XCTAssertFalse(rules.isWin(board: board, player: .White))
+        XCTAssertFalse(rules.isWin(board: boardState, player: .White))
     }
     
     func testNotEmptyBoardButNotWin_isNotAWin() {
         _ = board.place(1,1, .White)
-        XCTAssertFalse(rules.isWin(board: board, player: .White))
+        XCTAssertFalse(rules.isWin(board: boardState, player: .White))
     }
     
     func testFiveInARowInTheFirstRow_isAWin() {
         for col in 0..<5 {
             _ = board.place(0, col, .Black)
         }
-        XCTAssertTrue(rules.isWin(board: board, player: .Black))
+        XCTAssertTrue(rules.isWin(board: boardState, player: .Black))
 
     }
         
@@ -40,31 +43,32 @@ class GomokuRulesTests: XCTestCase {
         for col in 0..<5 {
             _ = board.place(0, col, .Black)
         }
-        XCTAssertFalse(rules.isWin(board: board, player: .White))
+        XCTAssertFalse(rules.isWin(board: boardState, player: .White))
     }
     
     func testFourInARowInTheFirstRow_isALose() {
         for col in 0..<4 {
             _ = board.place(0,col, .White)
         }
-        XCTAssertFalse(rules.isWin(board: board, player: .White))
+        XCTAssertFalse(rules.isWin(board: boardState, player: .White))
     }
     
     func testSixInARowInTheFirstRow_isAWin() {
            for col in 0..<6 {
                _ = board.place(0, col, .White)
            }
-           XCTAssertTrue(rules.isWin(board: board, player: .White))
+           XCTAssertTrue(rules.isWin(board: boardState, player: .White))
 
        }
     
     func testFiveInARowInAnyRow_isAWin() {
-        for row in 0..<board.HEIGHT {
+        for row in 0..<board.getHeight() {
+            board = Game.boardFactory!.makeBoard()
+            boardState = (board as! BoardState)
             for col in 0..<5 {
                 _ = board.place(row,col, .Black)
             }
-            XCTAssertTrue(rules.isWin(board: board, player: .Black))
-            board = Board()
+            XCTAssertTrue(rules.isWin(board: boardState, player: .Black))
         }
     }
     
@@ -72,14 +76,14 @@ class GomokuRulesTests: XCTestCase {
         for row in stride(from: 1, to: 10, by: 2){
             _ = board.place(row, 0, .White)
         }
-        XCTAssertFalse(rules.isWin(board: board, player: .White))
+        XCTAssertFalse(rules.isWin(board: boardState, player: .White))
     }
     
     func testFiveConsecutiveStonesInColumn_isAWin() {
         for row in 0..<6 {
             _ = board.place(row, 0, .White)
         }
-        XCTAssertTrue(rules.isWin(board: board, player: .White))
+        XCTAssertTrue(rules.isWin(board: boardState, player: .White))
     }
 
 }
