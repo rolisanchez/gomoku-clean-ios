@@ -9,12 +9,11 @@
 import Foundation
 
 protocol BoardFactory {
-    func makeBoard() -> Board
+    func makeBoard() -> Board & BoardState
 }
 
 class Game {
-    private let board: Board
-    private var player = Player.White
+    private let board: Board & BoardState
     private var rules: GomokuRules
     static var boardFactory: BoardFactory!
     
@@ -23,21 +22,16 @@ class Game {
         self.rules = GomokuRules()
     }
     
+    func takeTurn(_ row: Int, _ column: Int) -> BoardError? {
+        return board.takeTurn(row, column)
+    }
+    
     func whoseTurn() -> Player {
-        return player
+        return board.whoseTurn()
     }
-    
-    func takeTurn(_ row: Int, _ column: Int){
-        _ = board.place(row, column, whoseTurn())
-        player = other(player)
-    }
-    
-    func other(_ player: Player) -> Player {
-        return player == Player.White ? Player.Black : Player.White
-    }
-    
-    func getBoard() -> BoardState {
-        return board as! BoardState
+        
+    func getBoard() -> Board & BoardState {
+        return board
     }
     
     func getRules() -> GomokuRules {

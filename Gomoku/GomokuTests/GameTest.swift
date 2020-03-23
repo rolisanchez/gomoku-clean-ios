@@ -14,14 +14,14 @@ class GameTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Game.boardFactory = BoardFactoryImpl()
+        Game.boardFactory = BoardFactoryImpl() as! BoardFactory
         game = Game()
     }
     
-    func testCanCreateGame() {
+    func testWhiteStartsNewGame() {
         XCTAssertEqual(Player.White, game.whoseTurn())
     }
-    
+        
     func testAfterATurn_isOtherPlayersTurn() {
         game.takeTurn(0,0)
         XCTAssertEqual(Player.White, game.getBoard().get(0, 0).0)

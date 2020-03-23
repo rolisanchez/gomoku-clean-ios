@@ -21,7 +21,7 @@
 		DB67D15C230BF66900D3F29B /* GamePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67D15B230BF66900D3F29B /* GamePresenterTest.swift */; };
 		FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
 		FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
-		FB1EEE1521F4BF9D0011D7AF /* BoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* BoardData.swift */; };
+		FB1EEE1521F4BF9D0011D7AF /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* GameData.swift */; };
 		FB1EEE1621F4BF9D0011D7AF /* GomokuRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A380D21837CCB0036CBBE /* GomokuRules.swift */; };
 		FB1EEE1721F4BF9D0011D7AF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B0E2187013C0003DDB9 /* GridView.swift */; };
 		FB1EEE1821F4BFAD0011D7AF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB173B102187049A0003DDB9 /* UIColor+Additions.swift */; };
@@ -31,7 +31,7 @@
 		FB48490A21627E8000D94355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB48490921627E8000D94355 /* Assets.xcassets */; };
 		FB48490D21627E8000D94355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB48490B21627E8000D94355 /* LaunchScreen.storyboard */; };
 		FB48493121627F8500D94355 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493021627F8500D94355 /* BoardTests.swift */; };
-		FB48493321627FF900D94355 /* BoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* BoardData.swift */; };
+		FB48493321627FF900D94355 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB48493221627FF900D94355 /* GameData.swift */; };
 		FB5A380C21837AC20036CBBE /* GomokuRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A380B21837AC20036CBBE /* GomokuRulesTests.swift */; };
 		FB5A380E21837CCB0036CBBE /* GomokuRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A380D21837CCB0036CBBE /* GomokuRules.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +67,7 @@
 		FB48491921627E8000D94355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB48492421627E8000D94355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB48493021627F8500D94355 /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
-		FB48493221627FF900D94355 /* BoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardData.swift; sourceTree = "<group>"; };
+		FB48493221627FF900D94355 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		FB5A380B21837AC20036CBBE /* GomokuRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuRulesTests.swift; sourceTree = "<group>"; };
 		FB5A380D21837CCB0036CBBE /* GomokuRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuRules.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 				FB48490E21627E8000D94355 /* Info.plist */,
 				FB48490221627E7F00D94355 /* AppDelegate.swift */,
 				DB5D2BD824154C43003D01FB /* Board.swift */,
-				FB48493221627FF900D94355 /* BoardData.swift */,
+				FB48493221627FF900D94355 /* GameData.swift */,
 				DB5D2BDA24154CBB003D01FB /* BoardSymbols.swift */,
 				DB5D2BD524154BFB003D01FB /* BoardState.swift */,
 				DB38CECC230AF60E00AC50AE /* Game.swift */,
@@ -261,7 +261,7 @@
 				FB48490321627E7F00D94355 /* AppDelegate.swift in Sources */,
 				FB173B0F2187013C0003DDB9 /* GridView.swift in Sources */,
 				DB5D2BDB24154CBB003D01FB /* BoardSymbols.swift in Sources */,
-				FB48493321627FF900D94355 /* BoardData.swift in Sources */,
+				FB48493321627FF900D94355 /* GameData.swift in Sources */,
 				FB173B112187049A0003DDB9 /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +274,7 @@
 				FB1EEE1821F4BFAD0011D7AF /* UIColor+Additions.swift in Sources */,
 				DB5D2BDC24154CFC003D01FB /* Board.swift in Sources */,
 				DB67D15C230BF66900D3F29B /* GamePresenterTest.swift in Sources */,
-				FB1EEE1521F4BF9D0011D7AF /* BoardData.swift in Sources */,
+				FB1EEE1521F4BF9D0011D7AF /* GameData.swift in Sources */,
 				FB1EEE1621F4BF9D0011D7AF /* GomokuRules.swift in Sources */,
 				DB5D2BDD24154D02003D01FB /* BoardSymbols.swift in Sources */,
 				FB1EEE1721F4BF9D0011D7AF /* GridView.swift in Sources */,

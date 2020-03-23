@@ -7,8 +7,10 @@
 //
 
 protocol Board {
+    func takeTurn(_ row: Int, _ column: Int) -> BoardError?
     func place(_ row: Int, _ column: Int, _ player: Player) -> BoardError?
     func get(_ row: Int, _ column: Int) -> (Player?, BoardError?)
     func getWidth() -> Int
     func getHeight() -> Int
+    func whoseTurn() -> Player
 }

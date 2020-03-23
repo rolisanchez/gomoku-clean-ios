@@ -12,16 +12,17 @@
 
 
 class BoardFactoryImpl: BoardFactory {
-    func makeBoard() -> Board {
-        return BoardData()
+    func makeBoard() -> Board & BoardState {
+        return GameData()
     }
 }
 
-class BoardData: Board, BoardState {
-    private let WIDTH = 19
-    private let HEIGHT = 19
+class GameData: Board, BoardState {
+    fileprivate let WIDTH = 19
+    fileprivate let HEIGHT = 19
     
     var placedStones = [Int: Player]()
+    var player : Player = .White
     
     func getWidth() -> Int {
         return WIDTH
@@ -33,6 +34,20 @@ class BoardData: Board, BoardState {
     
     func stonesPlaced() -> Int {
         return placedStones.count
+    }
+    
+    func takeTurn(_ row: Int, _ column: Int) -> BoardError? {
+        let error = place(row, column, player)
+        player = other(player)
+        return error
+    }
+            
+    func other(_ player: Player) -> Player {
+        return player == Player.White ? Player.Black : Player.White
+    }
+    
+    func whoseTurn() -> Player {
+        return player
     }
     
     func place(_ row: Int, _ column: Int, _ player: Player) -> BoardError? {

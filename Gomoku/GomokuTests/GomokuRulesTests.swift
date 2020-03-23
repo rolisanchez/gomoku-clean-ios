@@ -16,7 +16,7 @@ class GomokuRulesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Game.boardFactory = BoardFactoryImpl()
+        Game.boardFactory = BoardFactoryImpl() as! BoardFactory
         board = Game.boardFactory!.makeBoard()
         boardState = (board as! BoardState)
         rules = GomokuRules()
